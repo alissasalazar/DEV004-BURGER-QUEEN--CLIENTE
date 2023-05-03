@@ -1,0 +1,102 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.fondoLogin {
+  background: linear-gradient(180deg, #7b113a 26.05%, #090100 96.17%);
+  position: relative;
+  min-height: 1000px;
+  display: block;
+}
+
+.imgLogin {
+  height: 100%;
+  background: url("./src/images/hamburguer-logo.jpg");
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  background-color: transparent;
+  opacity: 0.5;
+}
+
+.contenedorLogin {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.title {
+  position:absolute;
+  top: 7%;
+  font-family: "Kranky", cursive;
+  font-size: 80px;
+  display: flex;
+  text-align: center;
+  color: white;
+}
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Mandali', sans-serif;
+  color:white;
+  font-size: 30px;
+  height: 40%;
+  width: 100%;
+}
+
+.inputData{
+  border-radius: 15px;
+  min-height: 15%;
+  width: 70%;
+  margin-bottom: 5%;
+  font-size: 30px;
+  display: flex;
+  text-align: center;
+}
+.contentButton{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.firstButton{
+  background-color:#B73E3E;
+  border-radius: 15px;
+  font-size: 20px;
+  padding: 3px;
+  font-family: 'Mandali', sans-serif;
+  width: 80%;
+}
+.secondButton{
+  background-color:#FA9884;
+  border-radius: 15px;
+  font-size: 20px;
+  padding: 3px;
+  font-family: 'Mandali', sans-serif;
+  width: 80%;
+  margin-top: 5px;
+}
+a{
+  color:white;
+  text-decoration: none;
+}
+
+
+
+
+
+
+

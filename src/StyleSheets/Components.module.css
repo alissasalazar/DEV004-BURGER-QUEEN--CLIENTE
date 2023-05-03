@@ -1,0 +1,52 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Mandali", sans-serif;
+}
+
+.contenedorPedidos {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 900px;
+  min-width: 390px;
+}
+
+.pedidosEstado {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: rgba(135, 10, 10, 0.78);
+  margin-top: 20px;
+  font-weight: bold;
+  min-width: 85%;
+  min-height: 150px;
+  border-radius: 15px;
+}
+
+.pedido {
+  display: flex;
+  flex: 1 1;
+  background-color: white;
+  /*1 1, significa que se repartan de forma uniforme, según la cantidad de objetos(botones) que hayan */
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+}
+
+.tituloEstadoPedido {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: brown;
+  color: white;
+  margin-top: 15px;
+  border-radius: 15px;
+  min-width: 150px;
+  font-size: 18px;
+}
+.tituloView{
+  margin-top: 30px;
+  font-size: 40px;
+  font-weight: bold;
+}
