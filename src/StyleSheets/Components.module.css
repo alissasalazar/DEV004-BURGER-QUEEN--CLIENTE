@@ -3,12 +3,16 @@
   padding: 0px;
   font-family: "Mandali", sans-serif;
 }
+body {
+  background-color: #f5ebeb;
+}
 
 .contenedorPedidos {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
-  min-height: 900px;
+  min-height: 1000px;
   min-width: 390px;
 }
 
@@ -45,8 +49,129 @@
   min-width: 150px;
   font-size: 18px;
 }
-.tituloView{
+.tituloView {
   margin-top: 30px;
-  font-size: 40px;
+  font-size: 70px;
   font-weight: bold;
+}
+.tituloViewWelcome{
+  margin-top: 20px;
+  font-size: 70px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+.contenedorProductos {
+  min-height: 60%;
+  min-width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin: 15px, 20px, 55px, 20px;
+  border-radius: 15px;
+}
+
+.contenedorMenu {
+  min-height: 80%;
+  min-width: 30%;
+  border-radius: 15px;
+  margin: 15px;
+  display: block;
+  text-align: center;
+  background: #e3c296;
+  background: -webkit-linear-gradient(to left, #ffd194, #f7a398);
+  background: linear-gradient(to left, #fdc57c, #f1d3ad);
+}
+.tituloMenu {
+  font-size: 40px;
+  width: 40%;
+  border-radius: 15px;
+  text-align: center;
+  margin-left: 50px;
+}
+
+.imgProducto {
+  width: 30%;
+  height: 30%;
+}
+.producto {
+  width: 50%;
+  min-height: 30%;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 4px 0px 10px 50px;
+  display: block;
+  text-align: center;
+  border-color: white;
+  background-color: rgba(135, 10, 10, 0.28);
+  border: 15px;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.buttonAgregar {
+  font-size: 15px;
+  background-color: rgba(135, 10, 10, 0.38);
+  margin-left: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.contenedorOrdenes {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  border-radius: 15px;
+  background: #e3c296;
+  background: -webkit-linear-gradient(to left, #ffd194, #f7a398);
+  background: linear-gradient(to left, #fdc57c, #f1d3ad);
+}
+
+.contenedorOrden {
+  min-height: 80%;
+  min-width: 20%;
+  border-radius: 15px;
+  margin: 10px;
+  display: block;
+  text-align: center;
+  background-color: rgba(135, 10, 10, 0.28);
+  padding: 5px;
+}
+.tituloTipoOrden {
+  font-size: 40px;
+  width: 40%;
+  border-radius: 15px;
+  text-align: center;
+  margin-left: 50px;
+}
+.tituloDeOrden{
+  font-size: 20px;
+  font-weight: bold;
+  
+}
+.orden{
+  background-color: #f1efee;
+  border-radius: 10px;
+  padding: 5px;
+}
+.cantidadOrden{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: 15px;
+  padding: 15px;
+}
+.ordenIcono {
+  display: flex;
+  justify-content:right;
+  margin-top: 5px;
+  margin-left: 50%;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: rgba(135, 10, 10, 0.58);
+  color: white;
 }
