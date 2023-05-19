@@ -1,0 +1,50 @@
+.contenedorTabla {
+  margin: 100px auto;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Mandali', sans-serif;
+}
+
+.tabla {
+  background: rgba(135, 10, 10, 0.78);
+  text-align: center;
+  min-width: 100%;
+}
+th {
+  padding: 20px;
+  font-size: 15px;
+  height: 30%;
+}
+td {
+  padding: 20px;
+  background-color: white;
+}
+thead {
+  border-bottom: solid 5px;
+  color: white;
+}
+td:hover{
+  background-color: #FA9884;
+  color: white;
+}
+
+.ContenedorBotonesEstados{
+  margin-top: 35px;
+  min-width: 70%;
+  text-align: center;
+
+}
+.BotonesEstados{
+  font-family: 'Mandali', sans-serif;
+  font-size: 20px;
+  color: white;
+  margin-right: 15px;
+  padding: 10px;
+  border-radius: 15px;
+  background: rgba(135, 10, 10, 0.50);
+}
+
+.BotonesEstados:hover{
+  background-color: rgba(135, 10, 10, 0.90);
+}
