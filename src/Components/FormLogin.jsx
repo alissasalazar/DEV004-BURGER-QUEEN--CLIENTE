@@ -13,6 +13,9 @@ export default function FormLogin() {
   //TODO Colocamos la funcion para poder hacer la peticion de usario y pueda validar si es correcto
   const SubmitLogin = async (event) => {
     event.preventDefault();
+    
+    if (!email) return alert("Debe ingresar su correo")
+    if (!password) return alert("Debe ingresar una contraseña")
 
     const response = await fetch("http://localhost:8080/login", {
       crossDomain: true,
@@ -26,14 +29,15 @@ export default function FormLogin() {
       }),
     });
     const answer = await response.json();
+    console.log("que da answer Form login", answer);
     if (answer === "Cannot find user" || answer === "Incorrect password") {
-          setLoginErr(true);
-        } else {
-          document.cookie = `token = ${answer.accessToken}`;
-          console.log("aqui esta el token?",document.cookie )
-          document.cookie = `id = ${answer.user.id}`;
-          navigate("/Weiter");
-        }
+      setLoginErr(true);
+    } else {
+      document.cookie = `token = ${answer.accessToken}`;
+      console.log("aqui esta el token?", document.cookie);
+      document.cookie = `id = ${answer.user.id}`;
+      navigate("/Weiter");
+    }
   };
 
   return (
@@ -49,6 +53,7 @@ export default function FormLogin() {
             setEmail(e.target.value);
           }}
           placeholder="Ingresa tu correo aquí"
+          required
         />
         CONTRASEÑA
         <input
@@ -59,6 +64,7 @@ export default function FormLogin() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Contraseña"
+          required
         />
         {loginErr && (
           <div className="errorDiv">

@@ -23,7 +23,7 @@ export default function OrdenesDeliveredWeiter() {
       <h1 className={stylesComponents.tituloView}>PEDIDOS</h1>
       <div className={styles.contentButton}>
         <button className={styles.secondButton}>
-          <Link to={"/RegisterPedido"}>NUEVO PEDIDO</Link>
+          <Link to={"/RegisterPedido"} className={styles.a}>NUEVO PEDIDO</Link>
           <Outlet />
         </button>
         <BarraBtnsOrdenesWeiter></BarraBtnsOrdenesWeiter>

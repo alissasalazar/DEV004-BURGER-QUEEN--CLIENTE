@@ -1,9 +1,15 @@
 /* eslint-disable no-undef */
 import "@testing-library/jest-dom/extend-expect";
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react";
 import FormLogin from "../Components/FormLogin";
 import { MemoryRouter } from "react-router-dom";
-// import ViewLogin from "../Pages/ViewLogin";
+import ViewWeiter from "../Pages/ViewWeiter";
+
 describe("Login", () => {
   test("Deberia mostrar los elementos del form", () => {
     render(
@@ -16,8 +22,6 @@ describe("Login", () => {
   });
 
   test("El login fue existoso", async () => {
-    // Mockear el navigate
-    const navigateMock = jest.fn();
     // Resolver el mock del fetch
     const fetchMock = jest.fn().mockResolvedValue({
       json: () => ({
@@ -27,7 +31,7 @@ describe("Login", () => {
     });
 
     global.fetch = fetchMock;
-    const event = { preventDefault: jest.fn() };
+
     //con mount montamo el componente
     render(
       <MemoryRouter>
@@ -56,8 +60,6 @@ describe("Login", () => {
 
     await waitFor(() => expect(document.cookie).toContain("token=123"));
     await waitFor(() => expect(document.cookie).toContain("id=456"));
-
-    //  expect("/Weiter").toHaveBeenCalledWith("/Weiter")
   });
 
   test("Deberia darnos un error porque no encuentra al usuario", async () => {
@@ -86,17 +88,36 @@ describe("Login", () => {
     // Reset the fetch mock to avoid affecting other tests
     global.fetch.mockRestore();
   });
+});
 
-  test("No coloco ningun dato", async () => {
+describe("Weiter", () => {
+  test("Deberia ver los elementos del weiter", async () => {
+    const fetchMock = jest.fn().mockResolvedValue({
+      json: () => [
+        {
+          id: 1,
+          userId: 1,
+          client: "Jude Milhon",
+          products: [[Object], [Object]],
+          status: "pending",
+          dataEntry: "2022-03-05 15:00",
+          dateProcessed: "2023-05-19 11:11:28",
+        },
+      ],
+    });
+
+    global.fetch = fetchMock;
     render(
       <MemoryRouter>
-        <FormLogin />
+        <ViewWeiter />
       </MemoryRouter>
     );
-    const errorMessage = /Usuario\/contraseña incorrectos/i;
-    fireEvent.click(screen.getByText(/Ingresar/i));
-    await waitFor(() =>
-      expect(screen.getByText(errorMessage)).toBeInTheDocument()
-    );
+    screen.debug();
+    const input = screen.getByText(/pedidos/i);
+    const inputEl = screen.getByText(/ordenes por entregar/i);
+    const inputEl2 = screen.getByText(/nuevo pedido/i);
+    expect(input).toBeInTheDocument();
+    expect(inputEl).toBeInTheDocument();
+    expect(inputEl2).toBeInTheDocument();
   });
 });
