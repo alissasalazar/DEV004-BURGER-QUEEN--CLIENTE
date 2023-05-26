@@ -64,8 +64,8 @@ body {
 .contenedorProductos {
   min-height: 60%;
   min-width: 50%;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: auto auto auto;
   align-items: stretch;
   margin: 15px, 20px, 55px, 20px;
   border-radius: 15px;
@@ -96,7 +96,6 @@ body {
 }
 .producto {
   width: 50%;
-  min-height: 30%;
   font-size: 15px;
   font-weight: bold;
   margin: 4px 0px 10px 50px;
@@ -174,4 +173,39 @@ body {
   border-radius: 15px;
   background-color: rgba(135, 10, 10, 0.58);
   color: white;
+}
+
+.contenedorUsuarios {
+  height: 200%;
+  min-width: 40%;
+  border-radius: 15px;
+  margin: 15px;
+  display: block;
+  text-align: center;
+  background: #e3c296;
+  background: -webkit-linear-gradient(to left, #ffd194, #f7a398);
+  background: linear-gradient(to left, #fdc57c, #f1d3ad);
+}
+
+.contenedorRoles {
+  min-height: 60%;
+  min-width: 70%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 15px, 20px, 55px, 20px;
+  border-radius: 15px;
+}
+.usuario {
+  width: 80%;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 4px 0px 10px 30px;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  border-color: white;
+  background-color: rgba(135, 10, 10, 0.28);
+  border: 15px;
+  border-radius: 15px;
+  padding: 15px;
 }

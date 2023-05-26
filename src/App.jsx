@@ -9,6 +9,8 @@ import OrdenesDelivering from './Components/OrdenesDelivery'
 import ViewWeiter from './Pages/ViewWeiter'
 import OrdenesDeliveredWeiter from './Components/OrdenesDeliveredWeiter'
 import OrdenesDeliveringWeiter from './Components/OrdenesDeliveringWeiter'
+import ProductsOfAdministrador from './Components/ProductsOfAdministrador'
+import RegisterProductos from './Components/RegisterProductos'
 
 function App() {
 return (
@@ -23,6 +25,8 @@ return (
     <Route path = "/PedidoDelivering" element = {< OrdenesDelivering />}/>
     <Route path = "/PedidoDeliveredWeiter" element = {< OrdenesDeliveredWeiter />}/>
     <Route path = "/PedidoDeliveringWeiter" element = {< OrdenesDeliveringWeiter />}/>
+    <Route path = "/ProductosAdm" element = {< ProductsOfAdministrador />}/>
+    <Route path = "/RegisterProducts" element = {< RegisterProductos />}/>
     </Routes>
   </Router>
   

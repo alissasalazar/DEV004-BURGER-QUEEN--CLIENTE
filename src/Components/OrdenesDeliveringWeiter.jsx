@@ -24,7 +24,7 @@ export default function OrdenesDeliveringWeiter() {
       <h1 className={stylesComponents.tituloView}>PEDIDOS</h1>
       <div className={styles.contentButton}>
         <button className={styles.secondButton}>
-          <Link to={"/RegisterPedido"}>NUEVO PEDIDO</Link>
+          <Link to={"/RegisterPedido"} className={styles.a}>NUEVO PEDIDO</Link>
           <Outlet />
         </button>
         <BarraBtnsOrdenesWeiter></BarraBtnsOrdenesWeiter>
@@ -42,7 +42,7 @@ export default function OrdenesDeliveringWeiter() {
                     <div className={stylesComponents.orden}>
                       {order.products.map((producto) => {
                         return (
-                          <div key={producto.id}>
+                          <div key={(order.id) + "-" + (producto.product.id)}>
                             {producto.qty} - {producto.product.name}
                           </div>
                         );

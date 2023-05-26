@@ -88,6 +88,9 @@
   font-family: 'Mandali', sans-serif;
   width: 30%;
   margin-top: 5px;
+  outline-style: none;
+  color:white;
+  text-decoration: none;
 }
 a{
   color:white;

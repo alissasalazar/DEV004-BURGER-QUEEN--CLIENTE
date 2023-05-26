@@ -1,7 +1,7 @@
 import stylesComponents from "../StyleSheets/Components.module.css";
 import { useState, useEffect } from "react";
-import { getCookie } from "./Cookies";
 import TablaRegistroDePedido from "./TablaRegistroDePedido";
+import getProductRequest from "./getProductsRequest";
 export default function TablaDeProductos() {
   const [desayunoMenu, setDesayunoMenu] = useState([]);
   const [almuerzoMenu, setAlmuerzoMenu] = useState([]);
@@ -21,21 +21,14 @@ export default function TablaDeProductos() {
     }
   };
   const getProducts = async () => {
-    const cookieResult = getCookie("token");
-    const headers = {
-      Authorization: `Bearer ${cookieResult}`,
-    };
-    const response = await fetch("http://localhost:8080/products", { headers });
-    const answer = await response.json();
-    const productosDesayuno = answer.filter((product) => {
-      return product.type === "Desayuno";
-    });
+
+    const productosDesayuno = await getProductRequest("Desayuno")
     setDesayunoMenu(productosDesayuno);
-    const productoAlmuerzo = answer.filter((product) => {
-      return product.type === "Almuerzo";
-    });
+
+    const productoAlmuerzo = await getProductRequest("Almuerzo")
     setAlmuerzoMenu(productoAlmuerzo);
   };
+
   useEffect(() => {
     getProducts()
   }, []);
@@ -48,7 +41,7 @@ export default function TablaDeProductos() {
           {desayunoMenu
             ? desayunoMenu.map((product) => (
                 <div className={stylesComponents.producto} key={product.id}>
-                  <div key={product.id}>{product.name}</div>
+                  <div>{product.name}</div>
                   <img
                     className={stylesComponents.imgProducto}
                     src={product.image}

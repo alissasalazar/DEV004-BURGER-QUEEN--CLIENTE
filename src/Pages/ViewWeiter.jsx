@@ -9,8 +9,10 @@ export default function ViewWeiter() {
     <div className={stylesComponents.contenedorPedidos}>
       <h1 className={stylesComponents.tituloView}>PEDIDOS</h1>
       <div className={styles.contentButton}>
-        <button className={styles.secondButton}>
-          <Link to={"/RegisterPedido"}>NUEVO PEDIDO</Link>
+        <button className={styles.secondButton} >
+          <Link className={styles.a} to={"/RegisterPedido"} >
+            NUEVO PEDIDO
+          </Link>
           <Outlet />
         </button>
         <BarraBtnsOrdenesWeiter></BarraBtnsOrdenesWeiter>
