@@ -56,7 +56,7 @@ export default function OrdenesDelivering() {
                 <div className={stylesComponents.orden}>
                   {order.products.map((producto) => {
                     return (
-                      <div key={producto.id}>
+                      <div key={producto.product.id}>
                         {producto.qty} - {producto.product.name}
                       </div>
                     );

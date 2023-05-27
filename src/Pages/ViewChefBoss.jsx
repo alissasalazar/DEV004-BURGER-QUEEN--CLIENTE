@@ -39,7 +39,7 @@ export default function ViewChefBoss() {
                   {order.products.map((producto) => {
                     return (
                       <div
-                        key={producto.id}
+                        key={producto.product.id}
                         className={stylesComponents.cantidadOrden}
                       >
                         <div>

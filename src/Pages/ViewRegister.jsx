@@ -11,6 +11,7 @@ export default function ViewRegister() {
   const [password, setPassword] = useState("");
   const [rol, setRol] = useState("");
 
+
   const submitRegister = async (event) => {
     event.preventDefault();
     if (!email) return alert("Debe ingresar su correo");

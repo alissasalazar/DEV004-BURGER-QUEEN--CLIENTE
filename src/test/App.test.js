@@ -9,6 +9,7 @@ import {
 import FormLogin from "../Components/FormLogin";
 import { MemoryRouter } from "react-router-dom";
 import ViewWeiter from "../Pages/ViewWeiter";
+import userEvent from '@testing-library/user-event'
 
 describe("Login", () => {
   test("Deberia mostrar los elementos del form", () => {
@@ -88,6 +89,20 @@ describe("Login", () => {
     // Reset the fetch mock to avoid affecting other tests
     global.fetch.mockRestore();
   });
+
+  test('No coloco ningun dato', async () => {
+    render(
+      <MemoryRouter>
+        <FormLogin />
+      </MemoryRouter>
+    )
+
+    await waitFor(async () => {
+      userEvent.click(screen.getByText(/Ingresar/i))
+      const errorMessage = /Usuario\/contraseña incorrectos/i
+      expect(screen.findByText(errorMessage)).toBeInTheDocument
+    })
+  })
 });
 
 describe("Weiter", () => {
