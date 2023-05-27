@@ -54,7 +54,7 @@ body {
   font-size: 70px;
   font-weight: bold;
 }
-.tituloViewWelcome{
+.tituloViewWelcome {
   margin-top: 20px;
   font-size: 70px;
   font-weight: bold;
@@ -145,17 +145,16 @@ body {
   text-align: center;
   margin-left: 50px;
 }
-.tituloDeOrden{
+.tituloDeOrden {
   font-size: 20px;
   font-weight: bold;
-  
 }
-.orden{
+.orden {
   background-color: #f1efee;
   border-radius: 10px;
   padding: 5px;
 }
-.cantidadOrden{
+.cantidadOrden {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -165,7 +164,7 @@ body {
 }
 .ordenIcono {
   display: flex;
-  justify-content:right;
+  justify-content: right;
   margin-top: 5px;
   margin-left: 50%;
   cursor: pointer;
@@ -200,9 +199,8 @@ body {
   font-size: 15px;
   font-weight: bold;
   margin: 4px 0px 10px 30px;
-  display: block;
-  justify-content: center;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
   border-color: white;
   background-color: rgba(135, 10, 10, 0.28);
   border: 15px;

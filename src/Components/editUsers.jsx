@@ -19,6 +19,7 @@ export default function UpDateUsers({id,user}) {
   const [password, setPassword] = useState();
   const [rol, setRol] = useState(user.role);
 
+
   const upDate = async() =>{
     const getCookieResult = getCookie("token");
     const user ={
@@ -38,8 +39,6 @@ export default function UpDateUsers({id,user}) {
   const answer = await response.json();
   console.log("que me da answer ", answer)
   };
-
-
 
   return (
     <>
@@ -67,7 +66,13 @@ export default function UpDateUsers({id,user}) {
                 type="text"
                 autoComplete="on"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => {
+                if(password === ""){
+                  setPassword(user.password)
+                }else{
+                  setPassword(e.target.value)
+                }              
+              }}
                 autoFocus
               />
             </Form.Group>
