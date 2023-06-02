@@ -1,9 +1,10 @@
+import { url } from "../../services/peticiones";
 import { getCookie } from "../Components/Cookies";
 
 export async function getProduct(body) {
   const getCookieResult = getCookie("token");
   console.log("que me da cookies",getCookieResult )
-  const response = await fetch("http://localhost:8080/products", {
+  const response = await fetch(`${url}/products`, {
     crossDomain: true,
     method: "POST",
     headers: {
@@ -19,7 +20,7 @@ export async function getProduct(body) {
 export async function upDateProduct(id, body) {
   const getCookieResult = getCookie("token");
 
-  const response = await fetch("http://localhost:8080/products/" + id, {
+  const response = await fetch(`${url}/products` + id, {
     crossDomain: true,
     method: "PATCH",
     headers: {

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../StyleSheets/Login.module.css";
+import { fetchLogin } from "../../services/peticiones";
+import { roleAdm, roleChef, roleWaiter } from "../../Utiles/strings";
 
 export default function FormLogin() {
   // Usamos useNavigate para poder indicarle a que ruta debe ir luego
@@ -10,33 +12,32 @@ export default function FormLogin() {
   const [password, setPassword] = useState("");
   const ErrorMsg = () => setLoginErr(false);
 
-  //TODO Colocamos la funcion para poder hacer la peticion de usario y pueda validar si es correcto
   const SubmitLogin = async (event) => {
     event.preventDefault();
-    
-    if (!email) return alert("Debe ingresar su correo")
-    if (!password) return alert("Debe ingresar una contraseña")
 
-    const response = await fetch("http://localhost:8080/login", {
-      crossDomain: true,
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-    });
-    const answer = await response.json();
-    console.log("que da answer Form login", answer);
-    if (answer === "Cannot find user" || answer === "Incorrect password") {
-      setLoginErr(true);
-    } else {
-      document.cookie = `token = ${answer.accessToken}`;
-      console.log("aqui esta el token?", document.cookie);
-      document.cookie = `id = ${answer.user.id}`;
-      navigate("/Weiter");
+    if (!email) return alert("Debe ingresar su correo");
+    if (!password) return alert("Debe ingresar una contraseña");
+
+    try {
+      const answer = await fetchLogin(email, password);
+      console.log("que me da answer en form login", answer);
+      if (answer === "Cannot find user" || answer === "Incorrect password") {
+        setLoginErr(true);
+      } else {
+        console.log("me da el token", answer.accessToken);
+        if (answer.user.role === roleAdm) return navigate("/Administrador");
+        if (answer.user.role === roleChef) return navigate("/ChefBoss");
+        if (answer.user.role === roleWaiter) return navigate("/Weiter");
+        document.cookie = `token = ${answer.accessToken}`;
+        console.log("aqui esta el token?", document.cookie);
+        document.cookie = `id = ${answer.user.id}`;
+        navigate("/Weiter");
+      }
+    } catch (error) {
+      if (error === "Unauthorized") {
+        console.log("que me da error", error);
+        navigate("/");
+      }
     }
   };
 
@@ -73,7 +74,10 @@ export default function FormLogin() {
         )}
         <div className={styles.contentButton}>
           <button
-            onClick={() => SubmitLogin(event)}
+            onClick={() => {
+              SubmitLogin(event);
+              console.log("entro");
+            }}
             className={styles.firstButton}
           >
             INGRESAR

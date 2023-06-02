@@ -1,7 +1,7 @@
 import stylesComponents from "../StyleSheets/Components.module.css";
 import { useEffect, useState } from "react";
-import BarraBtnsOrdenesChef from "../Components/BarraBtnsOrdenesChef";
 import getOrdersRequest from "./getOrdersRequest";
+import BtnsOfNav from "../../Utiles/BtnsOfNav";
 
 // eslint-disable-next-line react/prop-types
 export default function OrdenesDelivering() {
@@ -21,8 +21,8 @@ export default function OrdenesDelivering() {
     let horaFinal = new Date(order.dateProcessed);
     let diff = horaFinal.getTime() - horaInicial.getTime();
     let diffMin = diff / (1000 * 60);
-    let diffMinCorto = diffMin.toString().slice(0,2)
-    console.log("me da los minutos cortos",diffMinCorto)
+    let diffMinCorto = diffMin.toString().slice(0, 2);
+    console.log("me da los minutos cortos", diffMinCorto);
     return {
       ordenId: order.id,
       diffTime: diffMinCorto,
@@ -34,7 +34,20 @@ export default function OrdenesDelivering() {
       <div className={stylesComponents.tituloViewWelcome}>
         !Bienvenido Chefcit@!
       </div>
-      <BarraBtnsOrdenesChef></BarraBtnsOrdenesChef>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <form className="container-fluid justify-content-start">
+          <BtnsOfNav
+            ruta={"/ChefBoss"}
+            nombre={" Ordenes Pendientes"}
+            className={"btn btn-success me-2"}
+          />
+          <BtnsOfNav
+            ruta={"/PedidoDelivering"}
+            nombre={"Ordenes Listas"}
+            className={"btn btn-warning"}
+          />
+        </form>
+      </nav>
       <p className={stylesComponents.tituloEstadoPedido}>Órdenes Listas</p>
       <div className={stylesComponents.contenedorOrdenes}>
         {deliveringOrders.map((order) => {
@@ -43,11 +56,15 @@ export default function OrdenesDelivering() {
               <div className={stylesComponents.contenedorOrden}>
                 <div className={stylesComponents.tituloDeOrden}>
                   {diferenciaHora.map((horas) => {
-                    if(order.id === horas.ordenId){
-                      return(
-                        <div key={horas.ordenId} className={stylesComponents.tituloEstadoPedido}> 
-                        Hecho en {horas.diffTime} mnts</div>
-                      )
+                    if (order.id === horas.ordenId) {
+                      return (
+                        <div
+                          key={horas.ordenId}
+                          className={stylesComponents.tituloEstadoPedido}
+                        >
+                          Hecho en {horas.diffTime} mnts
+                        </div>
+                      );
                     }
                   })}
                   <div>{order.id}</div>

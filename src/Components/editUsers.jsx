@@ -6,6 +6,7 @@ import Modal from "react-bootstrap/Modal";
 import { AiOutlineEdit } from "react-icons/ai";
 // import Dropdown from "react-bootstrap/Dropdown";
 import { getCookie } from "../Components/Cookies";
+import { url } from "../../services/peticiones";
 
 
 
@@ -28,7 +29,7 @@ export default function UpDateUsers({id,user}) {
       role: rol,
     }
     console.log("que me da el id", id)
-    const response = await fetch("http://localhost:8080/users/" + id, {
+    const response = await fetch(`${url}/users` + id, {
     method: "PATCH",
     headers: {
       "Content-type": "application/json",

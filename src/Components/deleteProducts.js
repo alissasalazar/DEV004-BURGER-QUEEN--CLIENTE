@@ -1,8 +1,9 @@
+import { url } from "../../services/peticiones";
 import { getCookie } from "./Cookies";
 
 const deleteProduct = async (id) => {
   const getCookieResult = getCookie("token");
-  const response = await fetch("http://localhost:8080/products/" + id, {
+  const response = await fetch(`${url}/products` + id, {
     method: "DELETE",
     headers: {
       "Content-type": "application/json",

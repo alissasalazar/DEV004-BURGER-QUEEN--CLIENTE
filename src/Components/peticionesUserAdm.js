@@ -1,7 +1,9 @@
 // import { getCookie } from "../Components/Cookies";
 
+import { url } from "../../services/peticiones";
+
 export async function getUsers(body) {
-  const response = await fetch("http://localhost:8080/users", {
+  const response = await fetch(`${url}/users`, {
     crossDomain: true,
     method: "POST",
     headers: {

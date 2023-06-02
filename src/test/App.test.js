@@ -10,6 +10,7 @@ import FormLogin from "../Components/FormLogin";
 import { MemoryRouter } from "react-router-dom";
 import ViewWeiter from "../Pages/ViewWeiter";
 import userEvent from '@testing-library/user-event'
+import { url } from "../../services/peticiones";
 
 describe("Login", () => {
   test("Deberia mostrar los elementos del form", () => {
@@ -47,7 +48,7 @@ describe("Login", () => {
     });
     fireEvent.click(screen.getByText(/Ingresar/i));
 
-    expect(fetchMock).toHaveBeenCalledWith("http://localhost:8080/login", {
+    expect(fetchMock).toHaveBeenCalledWith(`${url}/login`, {
       crossDomain: true,
       method: "POST",
       headers: {
