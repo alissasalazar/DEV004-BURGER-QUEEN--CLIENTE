@@ -1,8 +1,7 @@
-
-import styles from "../StyleSheets/Login.module.css";
-import stylesComponents from "../StyleSheets/Components.module.css";
-import TablaDeProductos from "../Components/TablaDeProductos";
-import stylePedido from "../StyleSheets/RegisterPedido.module.css";
+import styles from "../../../../src/StyleSheets/Login.module.css";
+import stylesComponents from "../../../../src/StyleSheets/Components.module.css";
+import TablaDeProductos from "./TablaDeProductos";
+import stylePedido from "../../../../src/StyleSheets/RegisterPedido.module.css";
 
 export default function RegisterPedido() {
 

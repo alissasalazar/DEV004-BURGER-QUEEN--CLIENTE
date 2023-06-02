@@ -1,7 +1,8 @@
-import stylesComponents from "../StyleSheets/Components.module.css";
+import stylesComponents from "../../../../src/StyleSheets/Components.module.css";
 import { useState, useEffect } from "react";
 import TablaRegistroDePedido from "./TablaRegistroDePedido";
-import getProductRequest from "./getProductsRequest";
+import getProductRequest from "../../getProductsRequest";
+
 export default function TablaDeProductos() {
   const [desayunoMenu, setDesayunoMenu] = useState([]);
   const [almuerzoMenu, setAlmuerzoMenu] = useState([]);
@@ -21,16 +22,15 @@ export default function TablaDeProductos() {
     }
   };
   const getProducts = async () => {
-
-    const productosDesayuno = await getProductRequest("Desayuno")
+    const productosDesayuno = await getProductRequest("Desayuno");
     setDesayunoMenu(productosDesayuno);
 
-    const productoAlmuerzo = await getProductRequest("Almuerzo")
+    const productoAlmuerzo = await getProductRequest("Almuerzo");
     setAlmuerzoMenu(productoAlmuerzo);
   };
 
   useEffect(() => {
-    getProducts()
+    getProducts();
   }, []);
 
   return (

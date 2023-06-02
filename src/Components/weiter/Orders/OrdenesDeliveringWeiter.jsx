@@ -1,9 +1,22 @@
-import styles from "../StyleSheets/Login.module.css";
-import stylesComponents from "../StyleSheets/Components.module.css";
-import OrdenesPendingWeiter from "../Components/weiter/Orders/OrdenesPendingWeiter";
-import BtnsOfNav from "../../Utiles/BtnsOfNav";
+import stylesComponents from "../../../../src/StyleSheets/Components.module.css"
+import { useEffect, useState } from "react";
+import getOrdersRequest from "../../getOrdersRequest";
+import styles from "../../../../src/StyleSheets/Login.module.css";
+import BtnsOfNav from "../../../../Utiles/BtnsOfNav";
+import Orders from "../../../../Utiles/Ordenes";
 
-export default function ViewWeiter() {
+export default function OrdenesDeliveringWeiter() {
+  const [deliveringOrders, setDeliveringOrders] = useState([]);
+
+  const getDeliveringOrders = async () => {
+    const response = await getOrdersRequest("delivering");
+    return setDeliveringOrders(response);
+  };
+
+  useEffect(() => {
+    getDeliveringOrders();
+  }, []);
+
   return (
     <div className={stylesComponents.contenedorPedidos}>
       <h1 className={stylesComponents.tituloView}>PEDIDOS</h1>
@@ -32,7 +45,14 @@ export default function ViewWeiter() {
             />
           </form>
         </nav>
-        <OrdenesPendingWeiter></OrdenesPendingWeiter>
+        <div>
+          <Orders
+            nameStatusOrder={"Ordenes por entregar"}
+            arrOrder={deliveringOrders}
+            funcion1={getDeliveringOrders()}
+            nameBtn={"Orden Entregada"}
+          />
+        </div>
       </div>
     </div>
   );

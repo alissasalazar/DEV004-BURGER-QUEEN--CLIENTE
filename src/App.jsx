@@ -4,11 +4,11 @@ import ViewLogin from "./Pages/ViewLogin"
 import ViewRegister from "./Pages/ViewRegister"
 import ViewChefBoss from "./Pages/ViewChefBoss"
 import ViewAdministrador from "./Pages/ViewAdministrador"
-import RegisterPedido from "./Pages/RegisterPedido"
+import RegisterPedido from "./Components/weiter/RegisterPedido/RegisterPedido"
 import OrdenesDelivering from './Components/OrdenesDelivery'
 import ViewWeiter from './Pages/ViewWeiter'
-import OrdenesDeliveredWeiter from './Components/OrdenesDeliveredWeiter'
-import OrdenesDeliveringWeiter from './Components/OrdenesDeliveringWeiter'
+import OrdenesDeliveredWeiter from './Components/weiter/Orders/OrdenesDeliveredWeiter'
+import OrdenesDeliveringWeiter from './Components/weiter/Orders/OrdenesDeliveringWeiter'
 import ProductsOfAdministrador from './Components/ProductsOfAdministrador'
 import RegisterProductos from './Components/RegisterProductos'
 

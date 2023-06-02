@@ -1,14 +1,28 @@
-import styles from "../StyleSheets/Login.module.css";
-import stylesComponents from "../StyleSheets/Components.module.css";
-import OrdenesPendingWeiter from "../Components/weiter/Orders/OrdenesPendingWeiter";
-import BtnsOfNav from "../../Utiles/BtnsOfNav";
+import stylesComponents from "../../../../src/StyleSheets/Components.module.css"
+import { useEffect, useState } from "react";
+import styles from "../../../../src/StyleSheets/Login.module.css";
+import getOrdersRequest from "../../getOrdersRequest";
+import BtnsOfNav from "../../../../Utiles/BtnsOfNav";
+import Orders from "../../../../Utiles/Ordenes";
 
-export default function ViewWeiter() {
+// eslint-disable-next-line react/prop-types
+export default function OrdenesDeliveredWeiter() {
+  const [deliveredOrders, setdeliveredOrders] = useState([]);
+
+  const getDeliveredOrders = async () => {
+    const response = await getOrdersRequest("delivered");
+    return setdeliveredOrders(response);
+  };
+
+  useEffect(() => {
+    getDeliveredOrders();
+  }, []);
+
   return (
     <div className={stylesComponents.contenedorPedidos}>
       <h1 className={stylesComponents.tituloView}>PEDIDOS</h1>
       <div className={styles.contentButton}>
-        <BtnsOfNav
+      <BtnsOfNav
           ruta={"/RegisterPedido"}
           nombre={"NUEVO PEDIDO"}
           className={"btn btn-outline-dark btn-lg"}
@@ -32,7 +46,12 @@ export default function ViewWeiter() {
             />
           </form>
         </nav>
-        <OrdenesPendingWeiter></OrdenesPendingWeiter>
+        <div>
+          <Orders
+            nameStatusOrder={"Ordenes entregadas"}
+            arrOrder={deliveredOrders}
+          />
+        </div>
       </div>
     </div>
   );

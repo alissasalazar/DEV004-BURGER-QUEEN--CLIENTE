@@ -1,25 +1,12 @@
-import stylesComponents from "../StyleSheets/Components.module.css";
-import { useEffect, useState } from "react";
-import getOrdersRequest from "./getOrdersRequest";
-import canceledOrder from "./canceledOrder";
-
-export default function OrdenesPendingWeiter() {
-  const [pendingOrders, setPendingOrders] = useState([]);
-
-  const getDeliveringOrders = async () => {
-    const response = await getOrdersRequest("pending");
-    return setPendingOrders(response);
-  };
-
-  useEffect(() => {
-    getDeliveringOrders();
-  }, []);
-
+/* eslint-disable react/prop-types */
+import stylesComponents from "../src/StyleSheets/Components.module.css"
+import { checkOrderToDelivered, deleteFetch } from "../services/peticiones";
+export default function Orders({nameStatusOrder,arrOrder,funcion1,nameBtn}) {
   return (
     <div>
-      <p className={stylesComponents.tituloEstadoPedido}>Ordenes Pendientes</p>
+      <p className={stylesComponents.tituloEstadoPedido}>{nameStatusOrder}</p>
       <div className={stylesComponents.contenedorOrdenes}>
-        {pendingOrders.map((order) => {
+        {arrOrder.map((order) => {
           return (
             <div key={order.id} className={stylesComponents.contenedorOrden}>
               <div className={stylesComponents.tituloDeOrden}>
@@ -43,11 +30,15 @@ export default function OrdenesPendingWeiter() {
               <button
                 className={stylesComponents.ordenIcono}
                 onClick={() => {
-                  canceledOrder(order.id);
-                  getDeliveringOrders();
+                  if(nameBtn==="Cancelar Orden"){
+                    deleteFetch("orders",order.id)
+                    funcion1
+                  } else if(nameBtn === "Orden Entregada"){
+                    checkOrderToDelivered(order.id,"delivered")
+                  }
                 }}
               >
-                Cancelar orden
+                {nameBtn}
               </button>
             </div>
           );

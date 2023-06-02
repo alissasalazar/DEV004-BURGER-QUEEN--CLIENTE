@@ -6,6 +6,7 @@ import Modal from "react-bootstrap/Modal";
 import { AiOutlineEdit } from "react-icons/ai";
 // import Dropdown from "react-bootstrap/Dropdown";
 import { getCookie } from "./Cookies";
+import { url } from "../../services/peticiones";
 
 // eslint-disable-next-line react/prop-types
 export default function UpDateProducts({ id, product }) {
@@ -27,7 +28,7 @@ export default function UpDateProducts({ id, product }) {
       type: type,
     };
     console.log("que me da el id", id);
-    const response = await fetch("http://localhost:8080/products/" + id, {
+    const response = await fetch(`${url}/products` + id, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",

@@ -2,8 +2,8 @@
 import stylesComponents from "../StyleSheets/Components.module.css";
 import { useEffect, useState } from "react";
 import checkOrderToDelivering from "../Components/checkOrderToDelivery";
-import BarraBtnsOrdenesChef from "../Components/BarraBtnsOrdenesChef";
 import getOrdersRequest from "../Components/getOrdersRequest";
+import BtnsOfNav from "../../Utiles/BtnsOfNav";
 
 export default function ViewChefBoss() {
   const [pendingOrders, setPendingOrders] = useState([]);
@@ -22,7 +22,20 @@ export default function ViewChefBoss() {
       <div className={stylesComponents.tituloViewWelcome}>
         !Bienvenido Chefcit@!
       </div>
-      <BarraBtnsOrdenesChef></BarraBtnsOrdenesChef>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <form className="container-fluid justify-content-start">
+          <BtnsOfNav
+            ruta={"/ChefBoss"}
+            nombre={"Ordenes Pendientes"}
+            className={"btn btn-success me-2"}
+          />
+          <BtnsOfNav
+            ruta={"/PedidoDelivering"}
+            nombre={" Ordenes Listas"}
+            className={"btn btn-warning"}
+          />
+        </form>
+      </nav>
       <div>
         <p className={stylesComponents.tituloEstadoPedido}>
           Ordenes Pendientes
