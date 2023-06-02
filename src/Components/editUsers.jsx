@@ -29,7 +29,7 @@ export default function UpDateUsers({id,user}) {
       role: rol,
     }
     console.log("que me da el id", id)
-    const response = await fetch(`${url}/users` + id, {
+    const response = await fetch(`${url}/users/` + id, {
     method: "PATCH",
     headers: {
       "Content-type": "application/json",
