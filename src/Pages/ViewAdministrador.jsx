@@ -3,9 +3,10 @@ import stylesComponents from "../StyleSheets/Components.module.css";
 import { useState, useEffect } from "react";
 import getUsersRequest from "../Components/getUsersRequest";
 import { AiOutlineDelete } from "react-icons/ai";
-import canceledUser from "../Components/canceledUser";
+
 import BtnsOfNav from "../../Utiles/BtnsOfNav";
 import UpDateUsers from "../Components/editUsers";
+import { deleteFetch } from "../../services/peticiones";
 export default function ViewAdministrador() {
   const [waiter, setWaiter] = useState([]);
   const [chef, setChef] = useState([]);
@@ -69,7 +70,7 @@ export default function ViewAdministrador() {
                   </div>
                   <AiOutlineDelete
                     onClick={() => {
-                      canceledUser(e.id);
+                      deleteFetch("users",e.id)
                       getUsers();
                     }}
                   ></AiOutlineDelete>
@@ -98,7 +99,7 @@ export default function ViewAdministrador() {
                   </div>
                     <AiOutlineDelete
                       onClick={() => {
-                        canceledUser(e.id);
+                        deleteFetch("users",e.id)
                         getUsers();
                       }}
                     ></AiOutlineDelete>
@@ -125,7 +126,7 @@ export default function ViewAdministrador() {
                   </div>
                     <AiOutlineDelete
                       onClick={() => {
-                        canceledUser(e.id);
+                        deleteFetch("users",e.id)
                         getUsers();
                       }}
                     ></AiOutlineDelete>

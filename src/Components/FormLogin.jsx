@@ -25,11 +25,12 @@ export default function FormLogin() {
         setLoginErr(true);
       } else {
         console.log("me da el token", answer.accessToken);
+        console.log("aqui esta el token?",document.cookie);
         if (answer.user.role === roleAdm) return navigate("/Administrador");
         if (answer.user.role === roleChef) return navigate("/ChefBoss");
         if (answer.user.role === roleWaiter) return navigate("/Weiter");
         document.cookie = `token = ${answer.accessToken}`;
-        console.log("aqui esta el token?", document.cookie);
+        
         document.cookie = `id = ${answer.user.id}`;
         navigate("/Weiter");
       }

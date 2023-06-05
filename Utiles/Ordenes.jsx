@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import stylesComponents from "../src/StyleSheets/Components.module.css"
-import { checkOrderToDelivered, deleteFetch } from "../services/peticiones";
+import { checkOrderToStatus, deleteFetch } from "../services/peticiones";
 export default function Orders({nameStatusOrder,arrOrder,funcion1,nameBtn}) {
   return (
     <div>
@@ -34,7 +34,7 @@ export default function Orders({nameStatusOrder,arrOrder,funcion1,nameBtn}) {
                     deleteFetch("orders",order.id)
                     funcion1
                   } else if(nameBtn === "Orden Entregada"){
-                    checkOrderToDelivered(order.id,"delivered")
+                    checkOrderToStatus(order.id,"delivered")
                   }
                 }}
               >
