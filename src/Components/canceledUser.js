@@ -3,7 +3,7 @@ import { getCookie } from "./Cookies";
 
 const canceledUser = async (id) => {
   const getCookieResult = getCookie("token");
-  const response = await fetch(`${url}/users` + id, {
+  const response = await fetch(`${url}/users/` + id, {
     method: "DELETE",
     headers: {
       "Content-type": "application/json",

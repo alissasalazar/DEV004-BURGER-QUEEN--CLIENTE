@@ -20,7 +20,7 @@ export async function getProduct(body) {
 export async function upDateProduct(id, body) {
   const getCookieResult = getCookie("token");
 
-  const response = await fetch(`${url}/products` + id, {
+  const response = await fetch(`${url}/products/` + id, {
     crossDomain: true,
     method: "PATCH",
     headers: {

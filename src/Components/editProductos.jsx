@@ -28,7 +28,7 @@ export default function UpDateProducts({ id, product }) {
       type: type,
     };
     console.log("que me da el id", id);
-    const response = await fetch(`${url}/products` + id, {
+    const response = await fetch(`${url}/products/` + id, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",

@@ -46,8 +46,8 @@ export default function ViewAdministrador() {
         </form>
       </nav>
       <BtnsOfNav
-        ruta={"/RegisterProducts"}
-        nombre={"Registrar producto"}
+        ruta={"/Register"}
+        nombre={"Registrar colaborador"}
         className={"btn btn-outline-dark btn-lg"}
       />
       <div className={stylesComponents.contenedorRoles}>
