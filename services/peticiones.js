@@ -1,6 +1,6 @@
 import { getCookie } from "../src/Components/Cookies";
 // export const url = "http://localhost:8080";
-export const url = "https://burger-queen-api-mock-production-6037.up.railway.app";
+export const url = "https://burger-queen-api-mock-production-f90c.up.railway.app";
 
 const getCookieResult = getCookie("token");
 
