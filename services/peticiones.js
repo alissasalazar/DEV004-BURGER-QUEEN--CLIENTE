@@ -1,6 +1,6 @@
 import { getCookie } from "../src/Components/Cookies";
-// export const url = "http://localhost:8080";
-export const url = "https://burger-queen-api-mock-production-f90c.up.railway.app";
+export const url = "http://localhost:8080";
+// export const url = "https://burger-queen-api-mock-production-f90c.up.railway.app";
 
 const getCookieResult = getCookie("token");
 
@@ -37,7 +37,7 @@ export async function deleteFetch(object,id){
   console.log("que me da answer en canceled", answer);
 }
 
-export async function checkOrderToDelivered(id,status){
+export async function checkOrderToStatus(id,status){
   const response = await fetch(`${url}/orders/` + id, {
     method: "PATCH",
     headers: {

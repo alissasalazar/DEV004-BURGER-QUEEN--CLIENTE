@@ -2,9 +2,9 @@ import stylesComponents from "../StyleSheets/Components.module.css";
 import { useState, useEffect } from "react";
 import getProductRequest from "./getProductsRequest";
 import { AiOutlineDelete } from "react-icons/ai";
-import deleteProduct from "./deleteProducts";
 import UpDateProducts from "./editProductos";
 import BtnsOfNav from "../../Utiles/BtnsOfNav";
+import { deleteFetch } from "../../services/peticiones";
 
 export default function ProductsOfAdministrador() {
   const [desayunoMenu, setDesayunoMenu] = useState([]);
@@ -68,7 +68,7 @@ export default function ProductsOfAdministrador() {
                     </div>
                     <AiOutlineDelete
                       onClick={() => {
-                        deleteProduct(product.id);
+                        deleteFetch("products",product.id)
                         getProducts();
                       }}
                     />
@@ -99,7 +99,7 @@ export default function ProductsOfAdministrador() {
                     </div>
                     <AiOutlineDelete
                       onClick={() => {
-                        deleteProduct(product.id);
+                        deleteFetch("products",product.id)
                         getProducts();
                       }}
                     ></AiOutlineDelete>
