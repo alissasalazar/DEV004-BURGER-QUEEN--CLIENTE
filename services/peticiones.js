@@ -1,4 +1,5 @@
 import { getCookie } from "../src/Components/Cookies";
+import time from "../src/Components/hora";
 // export const url = "http://localhost:8080";
 export const url = "https://burger-queen-api-mock-production-f90c.up.railway.app";
 
@@ -62,3 +63,17 @@ export async function fetchPedido(object){
   // eslint-disable-next-line no-unused-vars
   const answer = await response.json();
 }
+
+export const checkOrderToDelivering = async (id) => {
+  const getCookieResult = getCookie("token");
+  const response = await fetch(`${url}/orders/` + id, {
+    method: "PATCH",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: `Bearer ${getCookieResult}`,
+    },
+    body: JSON.stringify({ status: "delivering", dateProcessed: time() }),
+  });
+  const answer = await response.json();
+  console.log("que me da answer en chef boss", answer);
+};
