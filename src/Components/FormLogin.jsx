@@ -24,14 +24,13 @@ export default function FormLogin() {
       if (answer === "Cannot find user" || answer === "Incorrect password") {
         setLoginErr(true);
       } else {
+        document.cookie = `token = ${answer.accessToken}`;       
+        document.cookie = `id = ${answer.user.id}`;
         console.log("me da el token", answer.accessToken);
         console.log("aqui esta el token?",document.cookie);
         if (answer.user.role === roleAdm) return navigate("/Administrador");
         if (answer.user.role === roleChef) return navigate("/ChefBoss");
         if (answer.user.role === roleWaiter) return navigate("/Weiter");
-        document.cookie = `token = ${answer.accessToken}`;
-        
-        document.cookie = `id = ${answer.user.id}`;
         navigate("/Weiter");
       }
     } catch (error) {
