@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import styles from "../StyleSheets/Login.module.css";
 import stylesRegister from "../StyleSheets/Register.module.css";
-import { getUsers} from "../Components/peticionesUserAdm";
+import { getUsers } from "../../services/peticiones";
 
 export default function ViewRegister() {
   const navigate = useNavigate();

@@ -1,9 +1,8 @@
 // import styles from "../StyleSheets/Login.module.css";
 import stylesComponents from "../StyleSheets/Components.module.css";
 import { useEffect, useState } from "react";
-import checkOrderToDelivering from "../Components/checkOrderToDelivery";
-import getOrdersRequest from "../Components/getOrdersRequest";
 import BtnsOfNav from "../../Utiles/BtnsOfNav";
+import { checkOrderToDelivering, getOrdersRequest } from "../../services/peticiones";
 
 export default function ViewChefBoss() {
   const [pendingOrders, setPendingOrders] = useState([]);
@@ -65,8 +64,8 @@ export default function ViewChefBoss() {
                 <button
                   className={stylesComponents.ordenIcono}
                   onClick={() => {
-                    checkOrderToDelivering(order.id);
                     getPendingOrders();
+                    checkOrderToDelivering(order.id)                    
                   }}
                 >
                   Listo para entregar

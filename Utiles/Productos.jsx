@@ -1,5 +1,5 @@
 import stylesComponents from "../src/StyleSheets/Components.module.css";
-export default function Productos(typeOfProduct, nameOfProduct,nameBtn,funcion) {
+export default function Productos({typeOfProduct, nameOfProduct,nameBtn,funcion}) {
 
   return (
     <div>

@@ -1,9 +1,9 @@
 import stylesComponents from "../../../../src/StyleSheets/Components.module.css"
 import { useEffect, useState } from "react";
-import getOrdersRequest from "../../getOrdersRequest";
 import styles from "../../../../src/StyleSheets/Login.module.css";
 import BtnsOfNav from "../../../../Utiles/BtnsOfNav";
 import Orders from "../../../../Utiles/Ordenes";
+import { getOrdersRequest } from "../../../../services/peticiones";
 
 export default function OrdenesDeliveringWeiter() {
   const [deliveringOrders, setDeliveringOrders] = useState([]);

@@ -1,12 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import stylesComponents from "../StyleSheets/Components.module.css";
 import { useState, useEffect } from "react";
-import getUsersRequest from "../Components/getUsersRequest";
 import { AiOutlineDelete } from "react-icons/ai";
-
 import BtnsOfNav from "../../Utiles/BtnsOfNav";
 import UpDateUsers from "../Components/editUsers";
-import { deleteFetch } from "../../services/peticiones";
+import { deleteFetch, getUsersRequest } from "../../services/peticiones";
 export default function ViewAdministrador() {
   const [waiter, setWaiter] = useState([]);
   const [chef, setChef] = useState([]);

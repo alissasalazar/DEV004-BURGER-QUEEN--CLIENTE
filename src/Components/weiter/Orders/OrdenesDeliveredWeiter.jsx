@@ -1,9 +1,9 @@
 import stylesComponents from "../../../../src/StyleSheets/Components.module.css"
 import { useEffect, useState } from "react";
 import styles from "../../../../src/StyleSheets/Login.module.css";
-import getOrdersRequest from "../../getOrdersRequest";
 import BtnsOfNav from "../../../../Utiles/BtnsOfNav";
 import Orders from "../../../../Utiles/Ordenes";
+import { getOrdersRequest } from "../../../../services/peticiones";
 
 // eslint-disable-next-line react/prop-types
 export default function OrdenesDeliveredWeiter() {

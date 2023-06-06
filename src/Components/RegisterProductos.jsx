@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import styles from "../StyleSheets/Login.module.css";
 import stylesRegister from "../StyleSheets/Register.module.css";
-import { getProduct } from "./peticionesProductsAdm";
+import { getProduct } from "../../services/peticiones";
 
 export default function RegisterProductos() {
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import getOrdersRequest from "../../getOrdersRequest";
 import Orders from "../../../../Utiles/Ordenes";
+import { getOrdersRequest } from "../../../../services/peticiones";
 
 export default function OrdenesPendingWeiter() {
   const [pendingOrders, setPendingOrders] = useState([]);
@@ -27,3 +27,5 @@ export default function OrdenesPendingWeiter() {
     </div>
   );
 }
+
+
