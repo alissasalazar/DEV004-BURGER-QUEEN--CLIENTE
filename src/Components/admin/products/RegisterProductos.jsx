@@ -27,7 +27,6 @@ export default function RegisterProductos() {
     };
 
     const response = await getProduct(producto);
-    console.log("que me da answer de register", response);
     if (response === "Email already exists") {
       setRegisterErr(true);
     } else {

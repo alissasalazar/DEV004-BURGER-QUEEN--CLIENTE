@@ -54,7 +54,6 @@ export default function TablaRegistroDePedido({
       status: "pending",
       dataEntry: time(),
     };
-    console.log("que es pedidoObject", pedidoObject);
     await fetchPedido(pedidoObject);
     navigate("/Weiter");
   };

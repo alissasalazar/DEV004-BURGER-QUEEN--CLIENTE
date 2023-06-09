@@ -20,14 +20,11 @@ export default function FormLogin() {
 
     try {
       const answer = await fetchLogin(email, password);
-      console.log("que me da answer en form login", answer);
       if (answer === "Cannot find user" || answer === "Incorrect password") {
         setLoginErr(true);
       } else {
         document.cookie = `token = ${answer.accessToken}`;
-        console.log("me da el token", answer.accessToken);
         document.cookie = `id = ${answer.user.id}`;
-        console.log("aqui esta el token?", document.cookie);
         
         if (answer.user.role === roleAdm) return navigate("/Administrador");
         if (answer.user.role === roleChef) return navigate("/ChefBoss");
@@ -36,7 +33,6 @@ export default function FormLogin() {
       }
     } catch (error) {
       if (error === "Unauthorized") {
-        console.log("que me da error", error);
         navigate("/");
       }
     }
@@ -77,7 +73,6 @@ export default function FormLogin() {
           <button
             onClick={() => {
               SubmitLogin(event);
-              console.log("entro");
             }}
             className={styles.firstButton}
           >

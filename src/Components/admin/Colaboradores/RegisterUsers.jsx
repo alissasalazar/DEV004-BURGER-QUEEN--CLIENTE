@@ -25,7 +25,6 @@ export default function RegisterUsers() {
     };
 
       const response = await getUsers(user);
-      console.log("que me da answer de register", response);
       if (response === "Email already exists") {
         setRegisterErr(true);
       } else {

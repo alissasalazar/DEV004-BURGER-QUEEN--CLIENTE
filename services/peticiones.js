@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { getCookie } from "../Utiles/Cookies";
 import time from "../Utiles/hora";
 // export const url = "http://localhost:8080";
@@ -19,7 +20,6 @@ export async function fetchLogin(email, password) {
       }),
     });
     const answer = await response.json();
-    console.log("que da answer peticiones", answer);
     return answer
   } catch(error){
     console.log("que me da error", error)
@@ -35,7 +35,6 @@ export async function deleteFetch(object,id){
     },
   });
   const answer = await response.json();
-  console.log("que me da answer en canceled", answer);
 }
 
 export async function checkOrderToStatus(id,status){
@@ -48,7 +47,6 @@ export async function checkOrderToStatus(id,status){
     body: JSON.stringify({ status: status }),
   });
   const answer = await response.json();
-  console.log("que me da answer en delivering", answer);
 }
 
 export async function fetchPedido(object){
@@ -75,7 +73,6 @@ export const checkOrderToDelivering = async (id) => {
     body: JSON.stringify({ status: "delivering", dateProcessed: time() }),
   });
   const answer = await response.json();
-  console.log("que me da answer en chef boss", answer);
 };
 
 export  async function getOrdersRequest(stateOrden) {
@@ -113,7 +110,6 @@ export async function getProductRequest(typeProduct) {
 
 export async function getUsersRequest(roleUser) {
   const getCookieResult = getCookie("token");
-  console.log("que me da el get en users",getCookieResult )
   const response = await fetch(`${url}/users`, {
     headers: {
       "Content-type": "application/json",
@@ -129,7 +125,6 @@ export async function getUsersRequest(roleUser) {
 
 export async function getProduct(body) {
   const getCookieResult = getCookie("token");
-  console.log("que me da cookies",getCookieResult )
   const response = await fetch(`${url}/products`, {
     crossDomain: true,
     method: "POST",
@@ -166,7 +161,6 @@ export async function userPatch(user,id){
     body: JSON.stringify(user),
   });
   const answer = await response.json();
-  console.log("que me da answer en userPatch")
   return answer
 }
 
@@ -180,5 +174,4 @@ export async function productsPatch(producto,id){
     body: JSON.stringify(producto),
   });
   const answer = await response.json();
-  console.log("que me da answer ", answer);
 }

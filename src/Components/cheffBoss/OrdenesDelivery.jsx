@@ -23,7 +23,6 @@ export default function OrdenesDelivering() {
     let diff = horaFinal.getTime() - horaInicial.getTime();
     let diffMin = diff / (1000 * 60);
     let diffMinCorto = diffMin.toString().slice(0, 2);
-    console.log("me da los minutos cortos", diffMinCorto);
     return {
       ordenId: order.id,
       diffTime: diffMinCorto,
