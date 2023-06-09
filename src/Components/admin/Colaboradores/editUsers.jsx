@@ -4,11 +4,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { AiOutlineEdit } from "react-icons/ai";
-// import Dropdown from "react-bootstrap/Dropdown";
-import { getCookie } from "../Components/Cookies";
-import { url } from "../../services/peticiones";
-
-
+import { userPatch } from "../../../../services/peticiones";
 
 // eslint-disable-next-line react/prop-types
 export default function UpDateUsers({id,user}) {
@@ -22,23 +18,12 @@ export default function UpDateUsers({id,user}) {
 
 
   const upDate = async() =>{
-    const getCookieResult = getCookie("token");
     const user ={
       email: email,
       password: password,
       role: rol,
     }
-    console.log("que me da el id", id)
-    const response = await fetch(`${url}/users/` + id, {
-    method: "PATCH",
-    headers: {
-      "Content-type": "application/json",
-      Authorization: `Bearer ${getCookieResult}`,
-    },
-    body: JSON.stringify(user),
-  });
-  const answer = await response.json();
-  console.log("que me da answer ", answer)
+    await userPatch(user,id)
   };
 
   return (

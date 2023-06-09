@@ -4,9 +4,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { AiOutlineEdit } from "react-icons/ai";
-// import Dropdown from "react-bootstrap/Dropdown";
-import { getCookie } from "./Cookies";
-import { url } from "../../services/peticiones";
+import { productsPatch } from "../../../../services/peticiones";
 
 // eslint-disable-next-line react/prop-types
 export default function UpDateProducts({ id, product }) {
@@ -20,24 +18,13 @@ export default function UpDateProducts({ id, product }) {
   const [type, setType] = useState(product.type);
 
   const upDate = async () => {
-    const getCookieResult = getCookie("token");
     const producto = {
       name: nameProduc,
       price: precio,
       image: image,
       type: type,
     };
-    console.log("que me da el id", id);
-    const response = await fetch(`${url}/products/` + id, {
-      method: "PATCH",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `Bearer ${getCookieResult}`,
-      },
-      body: JSON.stringify(producto),
-    });
-    const answer = await response.json();
-    console.log("que me da answer ", answer);
+    await productsPatch(producto, id);
   };
 
   return (
@@ -103,7 +90,7 @@ export default function UpDateProducts({ id, product }) {
           <Button
             variant="primary"
             onClick={() => {
-              upDate(), handleClose()
+              upDate(), handleClose();
             }}
           >
             Guardar cambios

@@ -8,10 +8,10 @@ import {
   AiFillDelete,
 } from "react-icons/ai";
 import { useState, useEffect } from "react";
-import { getCookie } from "../../Cookies";
 import { useNavigate } from "react-router-dom";
-import time from "../../hora";
 import { fetchPedido } from "../../../../services/peticiones";
+import { getCookie } from "../../../../Utiles/Cookies";
+import time from "../../../../Utiles/hora";
 
 export default function TablaRegistroDePedido({
   productosSeleccionados,

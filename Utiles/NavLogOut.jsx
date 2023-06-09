@@ -2,15 +2,15 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 
-function ContainerInsideExample() {
+export default function NavLogOut() {
   return (
-    <Navbar expand="lg" variant="light" bg="light">
+    <Navbar expand="lg" variant="dark" bg="dark" className="container-fluid">
       <Container>
-        <Navbar.Brand href="#">Burger Queen</Navbar.Brand>
-        <Button variant="outline-success">Salir</Button>
+        <Navbar.Brand>Burger Queen</Navbar.Brand>
+        <Button href="/" variant="outline-success">Salir</Button>
       </Container>
     </Navbar>
   );
 }
 
-export default ContainerInsideExample;
+

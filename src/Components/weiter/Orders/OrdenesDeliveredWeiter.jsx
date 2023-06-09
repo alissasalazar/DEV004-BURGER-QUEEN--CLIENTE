@@ -4,6 +4,7 @@ import styles from "../../../../src/StyleSheets/Login.module.css";
 import BtnsOfNav from "../../../../Utiles/BtnsOfNav";
 import Orders from "../../../../Utiles/Ordenes";
 import { getOrdersRequest } from "../../../../services/peticiones";
+import NavLogOut from "../../../../Utiles/NavLogOut";
 
 // eslint-disable-next-line react/prop-types
 export default function OrdenesDeliveredWeiter() {
@@ -20,6 +21,7 @@ export default function OrdenesDeliveredWeiter() {
 
   return (
     <div className={stylesComponents.contenedorPedidos}>
+      <NavLogOut />
       <h1 className={stylesComponents.tituloView}>PEDIDOS</h1>
       <div className={styles.contentButton}>
       <BtnsOfNav

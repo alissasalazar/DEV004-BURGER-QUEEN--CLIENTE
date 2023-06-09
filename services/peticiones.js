@@ -1,5 +1,5 @@
-import { getCookie } from "../src/Components/Cookies";
-import time from "../src/Components/hora";
+import { getCookie } from "../Utiles/Cookies";
+import time from "../Utiles/hora";
 // export const url = "http://localhost:8080";
 export const url = "https://burger-queen-api-mock-production-f90c.up.railway.app";
 
@@ -154,4 +154,31 @@ export async function getUsers(body) {
   });
   const answer = await response.json();
   return answer
+}
+
+export async function userPatch(user,id){
+  const response = await fetch(`${url}/users/` + id, {
+    method: "PATCH",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: `Bearer ${getCookieResult}`,
+    },
+    body: JSON.stringify(user),
+  });
+  const answer = await response.json();
+  console.log("que me da answer en userPatch")
+  return answer
+}
+
+export async function productsPatch(producto,id){
+  const response = await fetch(`${url}/products/` + id, {
+    method: "PATCH",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: `Bearer ${getCookieResult}`,
+    },
+    body: JSON.stringify(producto),
+  });
+  const answer = await response.json();
+  console.log("que me da answer ", answer);
 }

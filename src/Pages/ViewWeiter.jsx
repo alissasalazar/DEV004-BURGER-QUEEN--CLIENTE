@@ -2,10 +2,12 @@ import styles from "../StyleSheets/Login.module.css";
 import stylesComponents from "../StyleSheets/Components.module.css";
 import OrdenesPendingWeiter from "../Components/weiter/Orders/OrdenesPendingWeiter";
 import BtnsOfNav from "../../Utiles/BtnsOfNav";
+import NavLogOut from "../../Utiles/NavLogOut";
 
 export default function ViewWeiter() {
   return (
     <div className={stylesComponents.contenedorPedidos}>
+      <NavLogOut />
       <h1 className={stylesComponents.tituloView}>PEDIDOS</h1>
       <div className={styles.contentButton}>
         <BtnsOfNav

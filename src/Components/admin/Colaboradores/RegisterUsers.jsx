@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import styles from "../StyleSheets/Login.module.css";
-import stylesRegister from "../StyleSheets/Register.module.css";
-import { getUsers } from "../../services/peticiones";
+import styles from "../../../StyleSheets/Login.module.css";
+import stylesRegister from "../../../StyleSheets/Register.module.css";
+import { getUsers } from "../../../../services/peticiones";
 
-export default function ViewRegister() {
+export default function RegisterUsers() {
   const navigate = useNavigate();
   const [registerErr, setRegisterErr] = useState(false);
   const [email, setEmail] = useState("");

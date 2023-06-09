@@ -1,7 +1,8 @@
-import stylesComponents from "../StyleSheets/Components.module.css";
+import stylesComponents from "../../StyleSheets/Components.module.css";
 import { useEffect, useState } from "react";
-import BtnsOfNav from "../../Utiles/BtnsOfNav";
-import { getOrdersRequest } from "../../services/peticiones";
+import BtnsOfNav from "../../../Utiles/BtnsOfNav";
+import { getOrdersRequest } from "../../../services/peticiones";
+import NavLogOut from "../../../Utiles/NavLogOut";
 
 // eslint-disable-next-line react/prop-types
 export default function OrdenesDelivering() {
@@ -31,6 +32,7 @@ export default function OrdenesDelivering() {
 
   return (
     <div>
+      <NavLogOut />
       <div className={stylesComponents.tituloViewWelcome}>
         !Bienvenido Chefcit@!
       </div>

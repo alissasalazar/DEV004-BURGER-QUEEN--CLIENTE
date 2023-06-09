@@ -3,8 +3,9 @@ import stylesComponents from "../StyleSheets/Components.module.css";
 import { useState, useEffect } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
 import BtnsOfNav from "../../Utiles/BtnsOfNav";
-import UpDateUsers from "../Components/editUsers";
 import { deleteFetch, getUsersRequest } from "../../services/peticiones";
+import UpDateUsers from "../Components/admin/Colaboradores/editUsers";
+import NavLogOut from "../../Utiles/NavLogOut";
 export default function ViewAdministrador() {
   const [waiter, setWaiter] = useState([]);
   const [chef, setChef] = useState([]);
@@ -27,6 +28,7 @@ export default function ViewAdministrador() {
 
   return (
     <div className={stylesComponents.contenedorPedidos}>
+      <NavLogOut />
       <div className={stylesComponents.tituloView}>
         Bienvenido Administrad@r
       </div>
@@ -45,7 +47,7 @@ export default function ViewAdministrador() {
         </form>
       </nav>
       <BtnsOfNav
-        ruta={"/Register"}
+        ruta={"/RegisterUsers"}
         nombre={"Registrar colaborador"}
         className={"btn btn-outline-dark btn-lg"}
       />

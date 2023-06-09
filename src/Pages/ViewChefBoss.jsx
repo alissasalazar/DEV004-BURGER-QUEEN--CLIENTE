@@ -3,6 +3,7 @@ import stylesComponents from "../StyleSheets/Components.module.css";
 import { useEffect, useState } from "react";
 import BtnsOfNav from "../../Utiles/BtnsOfNav";
 import { checkOrderToDelivering, getOrdersRequest } from "../../services/peticiones";
+import NavLogOut from "../../Utiles/NavLogOut";
 
 export default function ViewChefBoss() {
   const [pendingOrders, setPendingOrders] = useState([]);
@@ -18,6 +19,7 @@ export default function ViewChefBoss() {
 
   return (
     <div>
+      <NavLogOut />
       <div className={stylesComponents.tituloViewWelcome}>
         !Bienvenido Chefcit@!
       </div>

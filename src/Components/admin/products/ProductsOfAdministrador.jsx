@@ -1,9 +1,10 @@
-import stylesComponents from "../StyleSheets/Components.module.css";
+import stylesComponents from "../../../StyleSheets/Components.module.css";
 import { useState, useEffect } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
 import UpDateProducts from "./editProductos";
-import BtnsOfNav from "../../Utiles/BtnsOfNav";
-import { deleteFetch, getProductRequest } from "../../services/peticiones";
+import BtnsOfNav from "../../../../Utiles/BtnsOfNav";
+import { deleteFetch, getProductRequest } from "../../../../services/peticiones";
+import NavLogOut from "../../../../Utiles/NavLogOut";
 
 
 export default function ProductsOfAdministrador() {
@@ -23,6 +24,7 @@ export default function ProductsOfAdministrador() {
 
   return (
     <div className={stylesComponents.contenedorPedidos}>
+      <NavLogOut />
       <div className={stylesComponents.tituloView}>
         Bienvenido Administrad@r
       </div>

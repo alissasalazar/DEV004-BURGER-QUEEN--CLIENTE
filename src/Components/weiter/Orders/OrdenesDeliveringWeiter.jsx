@@ -4,6 +4,7 @@ import styles from "../../../../src/StyleSheets/Login.module.css";
 import BtnsOfNav from "../../../../Utiles/BtnsOfNav";
 import Orders from "../../../../Utiles/Ordenes";
 import { getOrdersRequest } from "../../../../services/peticiones";
+import NavLogOut from "../../../../Utiles/NavLogOut";
 
 export default function OrdenesDeliveringWeiter() {
   const [deliveringOrders, setDeliveringOrders] = useState([]);
@@ -19,6 +20,7 @@ export default function OrdenesDeliveringWeiter() {
 
   return (
     <div className={stylesComponents.contenedorPedidos}>
+      <NavLogOut />
       <h1 className={stylesComponents.tituloView}>PEDIDOS</h1>
       <div className={styles.contentButton}>
         <BtnsOfNav

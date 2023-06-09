@@ -16,23 +16,12 @@ body {
   min-width: 390px;
 }
 
-.pedidosEstado {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background: rgba(135, 10, 10, 0.78);
-  margin-top: 20px;
-  font-weight: bold;
-  min-width: 85%;
-  min-height: 150px;
-  border-radius: 15px;
-}
+
 
 .pedido {
   display: flex;
   flex: 1 1;
   background-color: white;
-  /*1 1, significa que se repartan de forma uniforme, según la cantidad de objetos(botones) que hayan */
   justify-content: space-around;
   align-items: center;
   margin: 10px;
@@ -111,6 +100,7 @@ body {
 .buttonAgregar {
   font-size: 15px;
   background-color: rgba(135, 10, 10, 0.38);
+  margin-top: 15px;
   margin-left: 15px;
   border-radius: 15px;
   cursor: pointer;
@@ -138,13 +128,7 @@ body {
   background-color: rgba(135, 10, 10, 0.28);
   padding: 5px;
 }
-.tituloTipoOrden {
-  font-size: 40px;
-  width: 40%;
-  border-radius: 15px;
-  text-align: center;
-  margin-left: 50px;
-}
+
 .tituloDeOrden {
   font-size: 20px;
   font-weight: bold;

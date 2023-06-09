@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import stylesComponents from "../src/StyleSheets/Components.module.css";
 export default function Productos({typeOfProduct, nameOfProduct,nameBtn,funcion}) {
 
