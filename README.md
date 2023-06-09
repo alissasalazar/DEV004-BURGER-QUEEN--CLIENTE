@@ -247,29 +247,28 @@ para mantener actualizado el menú.
 
 
 ## 3.Planificacion en Trello:
-![Planificación](Trello.jpeg)
+![Planificación](./src/images/Trello.jpeg)
 ## 4.Diseño:
 Estas fueron las ideas iniciales, pero en el transcurso del proyecto y con los comentarios brindados se hicieron algunas modificaciones a unas vistas
 ### A. Prototipo de baja fidelidad: 
-![Logo](logo.jpeg)
-![Vistas](body.jpeg)
-![Vistas2](finally.jpeg)
+![Logo](./src/images/logo.jpeg)
+![Vistas](./src/images/body.jpeg)
+![Vistas2](./src/images/finally.jpeg)
 ### B. Prototipo de Alta fidelidad:
-![Waiter](waiter.jpeg)
-![ChefBoss](chefBoss.jpeg)
-![Administrador](manager.jpeg)
+![Waiter](./src/images/waiter.jpeg)
+![ChefBoss](./src/images/chefBoss.jpeg)
+![Administrador](./src/images/manager.jpeg)
 ### C.Diseño final despleagado:
-![Login y Chef](VistaLoginChef.jpeg)
-![Waiter](VistaWaiter.jpeg)
-![vistaAdm](vistaAdm1.jpeg)
-![vistaAdm2](vistaAdm2.jpeg)
+![Login y Chef](./src/images/VistaLoginChef.jpeg)
+![Waiter](./src/images/VistaWaiter.jpeg)
+![vistaAdm](./src/images/vistaAdm1.jpeg)
+![vistaAdm2](./src/images/vistaAdm2.jpeg)
 
 ## 5. Despliegue:
 
 -La aplicación se desplego en Netlify. Netlify es una plataforma de despliegue que nos permite desplegar nuestra aplicación web estática (HTML, CSS y JavaScript) y también nos permite desplegar aplicaciones web que se ejecutan en el servidor (Node.js). 
 
-    En enlace es: 
-[Burger Queen App](https://burgerqueealissa.netlify.app/)
+* En enlace es: [Burger Queen App](https://burgerqueealissa.netlify.app/)
 
 -La API Mock se desplego en _Railway_ y el enlace es: [Link de API desplegada](https://burger-queen-api-mock-production-f90c.up.railway.app)
 ## 6. Test: 
