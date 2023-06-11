@@ -18,7 +18,7 @@ export default function ViewChefBoss() {
   }, []);
 
   return (
-    <div>
+    <div  className={stylesComponents.contenedorPedidos}>
       <NavLogOut />
       <div className={stylesComponents.tituloViewWelcome}>
         !Bienvenido Chefcit@!
@@ -39,7 +39,7 @@ export default function ViewChefBoss() {
       </nav>
       <div>
         <p className={stylesComponents.tituloEstadoPedido}>
-          Ordenes Pendientes
+          Ordenes Pendientes({pendingOrders.length})
         </p>
         <div className={stylesComponents.contenedorOrdenes}>
           {pendingOrders.map((order) => {

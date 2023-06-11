@@ -30,7 +30,7 @@ export default function OrdenesDelivering() {
   });
 
   return (
-    <div>
+    <div className={stylesComponents.contenedorPedidos}>
       <NavLogOut />
       <div className={stylesComponents.tituloViewWelcome}>
         !Bienvenido Chefcit@!
@@ -49,7 +49,8 @@ export default function OrdenesDelivering() {
           />
         </form>
       </nav>
-      <p className={stylesComponents.tituloEstadoPedido}>Órdenes Listas</p>
+      <div>
+      <p className={stylesComponents.tituloEstadoPedido}>Órdenes Listas({deliveringOrders.length})</p>
       <div className={stylesComponents.contenedorOrdenes}>
         {deliveringOrders.map((order) => {
           return (
@@ -61,7 +62,7 @@ export default function OrdenesDelivering() {
                       return (
                         <div
                           key={horas.ordenId}
-                          className={stylesComponents.tituloEstadoPedido}
+                          className={stylesComponents.titleTime}
                         >
                           Hecho en {horas.diffTime} mnts
                         </div>
@@ -84,6 +85,7 @@ export default function OrdenesDelivering() {
             </div>
           );
         })}
+      </div>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { checkOrderToStatus, deleteFetch } from "../services/peticiones";
 export default function Orders({nameStatusOrder,arrOrder,funcion1,nameBtn}) {
   return (
     <div>
-      <p className={stylesComponents.tituloEstadoPedido}>{nameStatusOrder}</p>
+      <p className={stylesComponents.tituloEstadoPedido}>{nameStatusOrder}({arrOrder.length})</p>
       <div className={stylesComponents.contenedorOrdenes}>
         {arrOrder.map((order) => {
           return (

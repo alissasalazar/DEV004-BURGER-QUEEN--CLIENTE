@@ -36,7 +36,7 @@ body {
   margin-top: 15px;
   border-radius: 15px;
   min-width: 150px;
-  font-size: 18px;
+  font-size: 35px;
 }
 .tituloView {
   margin-top: 30px;
@@ -108,8 +108,8 @@ body {
 }
 
 .contenedorOrdenes {
-  min-height: 100%;
-  width: 100%;
+  margin: 15px;
+  width: 1200px;
   display: flex;
   flex-wrap: wrap-reverse;
   border-radius: 15px;
@@ -190,4 +190,10 @@ body {
   border: 15px;
   border-radius: 15px;
   padding: 15px;
+}
+.titleTime{
+  background-color: rgb(33, 174, 240);
+  color: whitesmoke;
+  font-size: 23px;
+  border-radius: 8px;
 }
