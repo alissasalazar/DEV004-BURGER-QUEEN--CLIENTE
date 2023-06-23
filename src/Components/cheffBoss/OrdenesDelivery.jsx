@@ -35,6 +35,7 @@ export default function OrdenesDelivering() {
       <div className={stylesComponents.tituloViewWelcome}>
         !Bienvenido Chefcit@!
       </div>
+      <div className={stylesComponents.linePorEntregar}>Por Entregar</div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <form className="container-fluid justify-content-start">
           <BtnsOfNav
@@ -44,7 +45,7 @@ export default function OrdenesDelivering() {
           />
           <BtnsOfNav
             ruta={"/PedidoDelivering"}
-            nombre={"Ordenes Listas"}
+            nombre={"Ordenes por entregar"}
             className={"btn btn-warning"}
           />
         </form>

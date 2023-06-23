@@ -23,6 +23,7 @@ export default function ViewChefBoss() {
       <div className={stylesComponents.tituloViewWelcome}>
         !Bienvenido Chefcit@!
       </div>
+      <div className={stylesComponents.linePendiente}>Pendientes</div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <form className="container-fluid justify-content-start">
           <BtnsOfNav

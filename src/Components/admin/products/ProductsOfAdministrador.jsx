@@ -47,9 +47,8 @@ export default function ProductsOfAdministrador() {
         nombre={"Registrar producto"}
         className={"btn btn-outline-dark btn-lg"}
       />
-      <div className={stylesComponents.contenedorProductos}>
-        <div className={stylesComponents.contenedorMenu}>
-          
+      <div className={stylesComponents.contenedorProductosAdm}>
+        <div className={stylesComponents.contenedorMenu}>        
           <p className={stylesComponents.tituloMenu}>Desayuno</p>
           {desayunoMenu
             ? desayunoMenu.map((product) => (

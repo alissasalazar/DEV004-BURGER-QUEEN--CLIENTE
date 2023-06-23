@@ -23,6 +23,7 @@ export default function OrdenesDeliveredWeiter() {
     <div className={stylesComponents.contenedorPedidos}>
       <NavLogOut />
       <h1 className={stylesComponents.tituloView}>PEDIDOS</h1>
+      <div className={stylesComponents.lineEntregado}>Entregado</div>
       <div className={styles.contentButton}>
       <BtnsOfNav
           ruta={"/RegisterPedido"}

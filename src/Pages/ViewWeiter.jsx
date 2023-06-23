@@ -9,6 +9,7 @@ export default function ViewWeiter() {
     <div className={stylesComponents.contenedorPedidos}>
       <NavLogOut />
       <h1 className={stylesComponents.tituloView}>PEDIDOS</h1>
+      <div className={stylesComponents.linePendiente}>Pendientes</div>
       <div className={styles.contentButton}>
         <BtnsOfNav
           ruta={"/RegisterPedido"}

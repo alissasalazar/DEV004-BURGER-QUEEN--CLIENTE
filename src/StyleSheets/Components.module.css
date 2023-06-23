@@ -59,7 +59,14 @@ body {
   margin: 15px, 20px, 55px, 20px;
   border-radius: 15px;
 }
-
+.contenedorProductosAdm{
+  min-height: 60%;
+  width: 80%;
+  display: grid;
+  grid-template-columns: auto auto;
+  margin: 15px, 20px, 55px, 20px;
+  border-radius: 15px;
+}
 .contenedorMenu {
   min-height: 80%;
   min-width: 30%;
@@ -196,4 +203,32 @@ body {
   color: whitesmoke;
   font-size: 23px;
   border-radius: 8px;
+}
+.linePendiente{
+  position: fixed;
+  bottom: 32%;
+  left: 0;
+  font-size: 20px;
+  background-color: #198754;
+  border-radius:  0 20px 20px 0 ;
+  padding: 10px;
+}
+.linePorEntregar{
+  position: fixed;
+  bottom: 32%;
+  left: 0;
+  font-size: 20px;
+  background-color: #FFC107;
+  border-radius:  0 20px 20px 0 ;
+  padding: 10px;
+  width: 7%;
+}
+.lineEntregado{
+  position: fixed;
+  bottom: 32%;
+  left: 0;
+  font-size: 20px;
+  background-color: #0DCAF0;
+  border-radius:  0 20px 20px 0 ;
+  padding: 10px;
 }
