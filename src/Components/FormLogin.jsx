@@ -15,8 +15,6 @@ export default function FormLogin() {
   const SubmitLogin = async (event) => {
     event.preventDefault();
 
-    if (!email) return alert("Debe ingresar su correo");
-    if (!password) return alert("Debe ingresar una contraseña");
 
     try {
       const answer = await fetchLogin(email, password);
