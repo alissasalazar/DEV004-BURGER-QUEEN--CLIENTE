@@ -52,56 +52,55 @@ body {
 }
 .contenedorProductos {
   min-height: 60%;
-  min-width: 50%;
+  width: 100%;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 40% 40% 20%;
   align-items: stretch;
-  margin: 15px, 20px, 55px, 20px;
   border-radius: 15px;
+  padding: 5%;
 }
 .contenedorProductosAdm{
   min-height: 60%;
   width: 80%;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 50% 50%;
   margin: 15px, 20px, 55px, 20px;
   border-radius: 15px;
 }
 .contenedorMenu {
   min-height: 80%;
-  min-width: 30%;
+  width: 90%;
   border-radius: 15px;
   margin: 15px;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   text-align: center;
-  background: #e3c296;
-  background: -webkit-linear-gradient(to left, #ffd194, #f7a398);
+  align-content: center;
+  align-items: flex-start;
   background: linear-gradient(to left, #fdc57c, #f1d3ad);
 }
 .tituloMenu {
   font-size: 40px;
-  width: 40%;
   border-radius: 15px;
+  margin-left:10%;
   text-align: center;
-  margin-left: 50px;
 }
 
 .imgProducto {
   width: 30%;
-  height: 30%;
+  height: 40%;
 }
 .producto {
-  width: 50%;
+  width: 70%;
   font-size: 15px;
   font-weight: bold;
-  margin: 4px 0px 10px 50px;
   display: block;
-  text-align: center;
-  border-color: white;
+  align-items: center;
   background-color: rgba(135, 10, 10, 0.28);
-  border: 15px;
   border-radius: 15px;
   padding: 15px;
+  margin-bottom: 10px;
 }
 
 .buttonAgregar {

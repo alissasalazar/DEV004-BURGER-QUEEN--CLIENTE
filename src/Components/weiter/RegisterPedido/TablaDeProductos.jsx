@@ -35,29 +35,23 @@ export default function TablaDeProductos() {
   }, []);
 
   return (
-    <div>
       <div className={stylesComponents.contenedorProductos}>
-        <div className={stylesComponents.contenedorMenu}>
         <Productos 
         typeOfProduct={desayunoMenu}
         nameOfProduct={"Desayuno"}
         nameBtn={"AGREGAR"}
         funcion ={agregarProducto}
         />
-        </div>
-        <div className={stylesComponents.contenedorMenu}>
         <Productos 
         typeOfProduct={almuerzoMenu}
         nameOfProduct={"Almuerzo"}
         nameBtn={"AGREGAR"}
         funcion ={agregarProducto}
         />
-        </div>
         <TablaRegistroDePedido
           productosSeleccionados={productosSeleccionados}
           seleccionProductosFinal={setProductosSeleccionados}
         />
-      </div>
     </div>
   );
 }

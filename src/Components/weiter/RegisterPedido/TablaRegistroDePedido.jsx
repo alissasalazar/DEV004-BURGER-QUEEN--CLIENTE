@@ -97,7 +97,7 @@ export default function TablaRegistroDePedido({
             onChange={(e) => {
               setNombre(e.target.value);
             }}
-            placeholder="Ingresar nombre de cliente"
+            placeholder="Ingresar nombre"
           ></input>
         </div>
         <div>

@@ -12,7 +12,7 @@
     align-items: stretch;
 }
 .contenedorRegistroOrden {
-  min-width: 40%;
+  width: 100%;
   min-height: 50%;
   margin: 15px;
   padding: 15px;
@@ -27,9 +27,10 @@
 .cantidadOrden {
   display: flex;
   align-items: center;
-  width: 80%;
+  width: 100%;
   margin: 15px;
   padding: 15px;
+
 }
 
 /* icono */
@@ -45,5 +46,5 @@
 .inputNombre{
   border-radius: 15px;
   padding: 5px;
-  min-width: 30%;
+  width: 100%;
 }
