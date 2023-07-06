@@ -24,7 +24,7 @@ export default function ViewAdministrador() {
 
   useEffect(() => {
     getUsers();
-  }, []);
+  }, [waiter, chef, administrador]);
 
   return (
     <div className={stylesComponents.contenedorPedidos}>
@@ -61,17 +61,12 @@ export default function ViewAdministrador() {
                 <div>Correo: "{e.email}" </div>
                 <div>Rol: {e.role}</div>
                 <div>
-                  <div
-                    onClick={() => {
-                      getUsers();
-                    }}
-                  >
+                  <div>
                     <UpDateUsers id={e.id} user={e} />
                   </div>
                   <AiOutlineDelete
                     onClick={() => {
-                      deleteFetch("users",e.id)
-                      getUsers();
+                      deleteFetch("users", e.id);
                     }}
                   ></AiOutlineDelete>
                 </div>
@@ -90,17 +85,12 @@ export default function ViewAdministrador() {
                   <div>Correo: "{e.email}" </div>
                   <div>Rol: {e.role}</div>
                   <div>
-                  <div
-                    onClick={() => {
-                      getUsers();
-                    }}
-                  >
-                    <UpDateUsers id={e.id} user={e} />
-                  </div>
+                    <div onClick={() => {}}>
+                      <UpDateUsers id={e.id} user={e} />
+                    </div>
                     <AiOutlineDelete
                       onClick={() => {
-                        deleteFetch("users",e.id)
-                        getUsers();
+                        deleteFetch("users", e.id);
                       }}
                     ></AiOutlineDelete>
                   </div>
@@ -117,17 +107,12 @@ export default function ViewAdministrador() {
                   <div>Correo:"{e.email}"</div>
                   <div>Rol: {e.role}</div>
                   <div>
-                  <div
-                    onClick={() => {
-                      getUsers();
-                    }}
-                  >
-                    <UpDateUsers id={e.id} user={e} />
-                  </div>
+                    <div onClick={() => {}}>
+                      <UpDateUsers id={e.id} user={e} />
+                    </div>
                     <AiOutlineDelete
                       onClick={() => {
-                        deleteFetch("users",e.id)
-                        getUsers();
+                        deleteFetch("users", e.id);
                       }}
                     ></AiOutlineDelete>
                   </div>

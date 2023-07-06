@@ -3,9 +3,11 @@ import { useState, useEffect } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
 import UpDateProducts from "./editProductos";
 import BtnsOfNav from "../../../../Utiles/BtnsOfNav";
-import { deleteFetch, getProductRequest } from "../../../../services/peticiones";
+import {
+  deleteFetch,
+  getProductRequest,
+} from "../../../../services/peticiones";
 import NavLogOut from "../../../../Utiles/NavLogOut";
-
 
 export default function ProductsOfAdministrador() {
   const [desayunoMenu, setDesayunoMenu] = useState([]);
@@ -20,7 +22,7 @@ export default function ProductsOfAdministrador() {
 
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [desayunoMenu, almuerzoMenu]);
 
   return (
     <div className={stylesComponents.contenedorPedidos}>
@@ -48,7 +50,7 @@ export default function ProductsOfAdministrador() {
         className={"btn btn-outline-dark btn-lg"}
       />
       <div className={stylesComponents.contenedorProductosAdm}>
-        <div className={stylesComponents.contenedorMenu}>        
+        <div className={stylesComponents.contenedorMenu}>
           <p className={stylesComponents.tituloMenu}>Desayuno</p>
           {desayunoMenu
             ? desayunoMenu.map((product) => (
@@ -61,17 +63,12 @@ export default function ProductsOfAdministrador() {
                   ></img>
                   <div>S/.{product.price} </div>
                   <div>
-                    <div
-                      onClick={() => {
-                        getProducts();
-                      }}
-                    >
+                    <div>
                       <UpDateProducts id={product.id} product={product} />
                     </div>
                     <AiOutlineDelete
                       onClick={() => {
-                        deleteFetch("products",product.id)
-                        getProducts();
+                        deleteFetch("products", product.id);
                       }}
                     />
                   </div>
@@ -92,17 +89,12 @@ export default function ProductsOfAdministrador() {
                   ></img>
                   <div>S/.{product.price} </div>
                   <div>
-                    <div
-                      onClick={() => {
-                        getProducts();
-                      }}
-                    >
+                    <div>
                       <UpDateProducts id={product.id} product={product} />
                     </div>
                     <AiOutlineDelete
                       onClick={() => {
-                        deleteFetch("products",product.id)
-                        getProducts();
+                        deleteFetch("products", product.id);
                       }}
                     ></AiOutlineDelete>
                   </div>
