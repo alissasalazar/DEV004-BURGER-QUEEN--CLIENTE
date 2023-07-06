@@ -33,7 +33,7 @@ export default function ViewChefBoss() {
           />
           <BtnsOfNav
             ruta={"/PedidoDelivering"}
-            nombre={" Ordenes Listas"}
+            nombre={" Ordenes por entregar"}
             className={"btn btn-warning"}
           />
         </form>
