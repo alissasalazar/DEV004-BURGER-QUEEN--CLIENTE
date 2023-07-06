@@ -15,7 +15,7 @@ export default function ViewChefBoss() {
 
   useEffect(() => {
     getPendingOrders();
-  }, []);
+  }, [pendingOrders]);
 
   return (
     <div  className={stylesComponents.contenedorPedidos}>
@@ -67,7 +67,6 @@ export default function ViewChefBoss() {
                 <button
                   className={stylesComponents.ordenIcono}
                   onClick={() => {
-                    getPendingOrders();
                     checkOrderToDelivering(order.id)                    
                   }}
                 >

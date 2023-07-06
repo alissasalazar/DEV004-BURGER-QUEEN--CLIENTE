@@ -15,7 +15,7 @@ export default function OrdenesDelivering() {
 
   useEffect(() => {
     getDeliveringOrders();
-  }, []);
+  }, [deliveringOrders]);
 
   const diferenciaHora = deliveringOrders.map((order) => {
     let horaInicial = new Date(order.dataEntry);
