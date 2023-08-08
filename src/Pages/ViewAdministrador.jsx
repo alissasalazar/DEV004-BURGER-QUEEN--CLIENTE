@@ -98,6 +98,7 @@ export default function ViewAdministrador() {
               ))
             : "No se han registrado aún Chefs"}
         </div>
+         <div className={stylesComponents.contenedorRoles}>
         <div className={stylesComponents.contenedorUsuarios}>
           <p className={stylesComponents.tituloMenu}>Administrador</p>
           {administrador
@@ -120,6 +121,7 @@ export default function ViewAdministrador() {
               ))
             : "No se han registrado aún administradores"}
         </div>
+         </div>
       </div>
     </div>
   );
