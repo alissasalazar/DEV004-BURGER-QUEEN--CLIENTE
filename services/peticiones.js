@@ -2,7 +2,7 @@
 import { getCookie } from "../Utiles/Cookies";
 import time from "../Utiles/hora";
 // export const url = "http://localhost:8080";
-export const url = "https://burger-queen-api-mock-production-f90c.up.railway.app";
+export const url = "burger-queen-api-mock-production-c312.up.railway.app";
 
 const getCookieResult = getCookie("token");
 
