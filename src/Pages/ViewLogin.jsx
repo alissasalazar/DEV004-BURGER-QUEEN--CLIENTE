@@ -1,6 +1,6 @@
 import styles from "../StyleSheets/Login.module.css";
 import FormLogin from "../Components/FormLogin";
-import hamburger from "../images/hamburguer-logo.dwg"
+import hamburger from "../images/hamburguer-logo.jpg"
 
 export default function ViewLogin() {
   return (
